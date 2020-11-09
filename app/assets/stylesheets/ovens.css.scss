@@ -1,3 +1,97 @@
 // Place all the styles related to the ovens controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  
+  .mobile-button-prepare {
+    display: none;
+  }
+ 
+  .desktop-button-prepare {
+    display: block;
+  }
+  
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+  .mobile-button-prepare {
+    display: none;
+  }
+ 
+  .desktop-button-prepare {
+    display: block;
+  }
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .mobile-button-prepare {
+    display: none;
+  }
+ 
+  .desktop-button-prepare {
+    display: block;
+  }
+  
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  .mobile-button-prepare {
+    display: block;
+  }
+ 
+  .desktop-button-prepare {
+    display: none;
+  }
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  .mobile-button-prepare {
+    display: block;
+  }
+ 
+  .desktop-button-prepare {
+    display: none;
+  }
+}
+
+@media (max-width: 320px) {
+  
+  .mobile-button-prepare {
+    display: block;
+  }
+ 
+  .desktop-button-prepare {
+    display: none;
+  }
+}
