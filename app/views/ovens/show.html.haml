@@ -5,9 +5,11 @@
   - if @oven.cookie
     1 cookie with
     = cookie_fillings(@oven.cookie.fillings)
-    - if @oven.cookie.ready?
+    - if @oven.cookie.cooked?
       (Your Cookie is Ready)
       = button_to "Retrieve Cookie", empty_oven_path, class: 'button tiny'
+    - else
+      (Cooking)
   - else
     None
 
