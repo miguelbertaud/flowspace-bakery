@@ -8,7 +8,7 @@ feature 'Cooking cookies' do
     expect(page).to_not have_content 'Chocolate Chip'
     expect(page).to_not have_content 'Your Cookie is Ready'
 
-    click_link_or_button 'Prepare Cookie'
+    first(".desktop-button-prepare").click
     fill_in 'Fillings', with: 'Chocolate Chip'
     click_button 'Mix and bake'
 
@@ -33,11 +33,11 @@ feature 'Cooking cookies' do
     oven = FactoryBot.create(:oven, user: user)
     visit oven_path(oven)
 
-    click_link_or_button 'Prepare Cookie'
+    first(".desktop-button-prepare").click
     fill_in 'Fillings', with: 'Chocolate Chip'
     click_button 'Mix and bake'
 
-    click_link_or_button  'Prepare Cookie'
+    first(".desktop-button-prepare").click
     expect(page).to have_content 'A cookie is already in the oven!'
     expect(current_path).to eq(oven_path(oven))
     expect(page).to_not have_button 'Mix and bake'
@@ -51,7 +51,7 @@ feature 'Cooking cookies' do
     visit oven_path(oven)
 
     3.times do
-      click_link_or_button 'Prepare Cookie'
+      first(".desktop-button-prepare").click
       fill_in 'Fillings', with: 'Chocolate Chip'
       click_button 'Mix and bake'
 
