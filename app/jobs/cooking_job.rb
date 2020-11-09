@@ -3,6 +3,7 @@ class CookingJob < ApplicationJob
 
   after_perform do |job|
     Cookie.find_by(id: job.arguments.first).cooked!
+    ActionCable.server.broadcast 'cookie_update', message: '(Your Cookie is Ready)'
   end
 
   def perform(cookie_id)
